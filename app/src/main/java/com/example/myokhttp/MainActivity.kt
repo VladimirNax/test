@@ -8,15 +8,21 @@ import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
+
+    private val api_key = API.KEY
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        println(api_key) // вывод ключа
+
 
         //   инициализация клиента
         val client = OkHttpClient()
         // формируем сам запрос
         val request = Request.Builder()
-                .url("https://reqres.in/api/users/2")
+                .url("https://api.themoviedb.org/3/movie/550?api_key=$api_key")
                 .build()
 
         //Создаем отправку запроса, мы должны имплементировать интерфейс Callback,
@@ -42,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-        println(API.KEY)
+
 
     }
 
