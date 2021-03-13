@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
             }
+
             //Переопределяем метод, что будет, если мы сможем получить ответ на запрос
             override fun onResponse(call: Call, response: Response) {
                 //Здесь тоже надо обернуть в try-catch
@@ -41,12 +42,12 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-
+        println(API.KEY)
 
     }
 
     // вызываем бесконечный цыкл для  симулирования ANR(приложение не отвечает)
-   /*override fun onTouchEvent(event: MotionEvent?): Boolean {
-        while (true) {}
-    }*/
+    /*override fun onTouchEvent(event: MotionEvent?): Boolean {
+         while (true) {}
+     }*/
 }
